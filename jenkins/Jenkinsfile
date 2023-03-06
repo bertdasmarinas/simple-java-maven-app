@@ -1,14 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Maven') {
-            steps {
-               sh '''
-               mvn --version
-               mvn clean package
-               '''
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
